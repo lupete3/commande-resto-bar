@@ -112,9 +112,9 @@ class TableManagement extends Component
     public function generateQrCode(Table $table)
     {
         $url = $table->getTableUrl();
-        $fileName = 'qrcodes/table-' . $table->id . '-' . Str::random(5) . '.png';
+        $fileName = 'qrcodes/table-' . $table->id . '-' . Str::random(5) . '.svg';
 
-        $qrCode = QrCode::format('png')
+        $qrCode = QrCode::format('svg')
             ->size(300)
             ->margin(1)
             ->generate($url);

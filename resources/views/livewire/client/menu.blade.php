@@ -158,7 +158,7 @@
     @if($showTableModal)
         <div class="modal fade show d-block" tabindex="-1"
             style="background-color: rgba(0,0,0,0.7); backdrop-filter: blur(10px); z-index: 3000;">
-            <div class="modal-dialog modal-dialog-centered mx-3">
+            <div class="modal-dialog modal-dialog-centered mx-auto px-3" style="max-width: 450px;">
                 <div class="modal-content border-0 shadow-lg" style="border-radius: 30px;">
                     <div class="modal-header border-0 pb-0 pt-4 px-4">
                         <h4 class="fw-800 mb-0">Où êtes-vous ?</h4>

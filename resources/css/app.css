@@ -1,0 +1,73 @@
+/* Premium Backend Refactor */
+:root {
+    --primary: #FF385C;
+    --bs-primary: #FF385C;
+    --bs-primary-rgb: 255, 56, 92;
+}
+
+/* Sidebar Overrides */
+.bg-menu-theme {
+    background-color: #ffffff !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05) !important;
+}
+
+.bg-menu-theme .menu-item.active > .menu-link:not(.menu-toggle) {
+    background-color: rgba(255, 56, 92, 0.08) !important;
+    color: var(--primary) !important;
+}
+
+.bg-menu-theme .menu-item.active > .menu-link:not(.menu-toggle):before {
+    background-color: var(--primary) !important;
+}
+
+.bg-menu-theme .menu-inner > .menu-item.active > .menu-link {
+    background: linear-gradient(72.47deg, var(--primary) 22.16%, rgba(255, 56, 92, 0.7) 76.47%) !important;
+    color: #fff !important;
+    box-shadow: 0px 2px 6px 0px rgba(255, 56, 92, 0.48) !important;
+}
+
+/* Card & Content Overrides */
+.card {
+    border-radius: 1rem !important;
+    border: none !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(255, 56, 92, 0.4) !important;
+}
+
+.btn-primary:hover {
+    background-color: #e32d4e !important;
+    border-color: #e32d4e !important;
+}
+
+/* Navbar Overrides */
+.layout-navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Badges */
+.bg-label-primary {
+    background-color: rgba(255, 56, 92, 0.16) !important;
+    color: var(--primary) !important;
+}
+
+/* Typography */
+body {
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Active links in submenus */
+.menu-vertical .menu-item.active:not(.open) > .menu-link {
+    background-color: rgba(255, 56, 92, 0.08) !important;
+}
+
+/* Progress bars & tabs */
+.nav-pills .nav-link.active {
+    background-color: var(--primary) !important;
+    box-shadow: 0 2px 4px 0 rgba(255, 56, 92, 0.4) !important;
+}
