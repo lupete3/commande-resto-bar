@@ -91,7 +91,7 @@
 
                             <div class="d-flex justify-content-between align-items-center gap-2">
                                 <span
-                                    class="price-text text-nowrap">{{ $establishment->currency ?? '$' }}{{ number_format($item->price, 2) }}</span>
+                                    class="price-text text-nowrap">{{ $establishment->currency ?? '$' }} {{ number_format($item->price, 2) }}</span>
                                 <div class="d-flex align-items-center">
                                     @if(isset($cart[$item->id]))
                                         <div class="d-flex align-items-center bg-light rounded-pill p-1">
