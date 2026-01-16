@@ -62,8 +62,8 @@
                     <div>Salles & Tables</div>
                 </a>
             </li>
-            <li class="menu-item {{ request()->is('manager/stats*') ? 'active' : '' }}">
-                <a href="javascript:void(0);" class="menu-link" >
+            <li class="menu-item {{ request()->routeIs('manager.statistics') ? 'active' : '' }}">
+                <a href="{{ route('manager.statistics') }}" class="menu-link" >
                     <i class="menu-icon tf-icons bx bx-line-chart"></i>
                     <div>Statistiques</div>
                 </a>

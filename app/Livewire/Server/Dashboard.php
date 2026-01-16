@@ -22,6 +22,11 @@ class Dashboard extends Component
 
     public function updateOrderStatus(Order $order, $newStatus)
     {
+        // On assigne le serveur à la commande s'il n'est pas déjà défini
+        if (!$order->server_id) {
+            $order->update(['server_id' => Auth::id()]);
+        }
+
         $order->updateStatus($newStatus);
         session()->flash('message', "Commande {$order->order_number} mise à jour en : {$newStatus}");
     }

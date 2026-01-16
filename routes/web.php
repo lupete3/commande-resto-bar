@@ -37,6 +37,7 @@ Route::middleware(['auth', 'role:manager'])
     Route::get('/categories', \App\Livewire\Manager\CategoryManagement::class)->name('categories');
     Route::get('/menu', \App\Livewire\Manager\MenuItemManagement::class)->name('menu');
     Route::get('/tables', \App\Livewire\Manager\TableManagement::class)->name('tables');
+    Route::get('/statistics', \App\Livewire\Manager\Statistics::class)->name('statistics');
   });
 
 // Server Routes (à implémenter)
