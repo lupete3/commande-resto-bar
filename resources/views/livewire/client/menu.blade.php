@@ -90,7 +90,8 @@
                             </p>
 
                             <div class="d-flex justify-content-between align-items-center gap-2">
-                                <span class="price-text text-nowrap">${{ number_format($item->price, 2) }}</span>
+                                <span
+                                    class="price-text text-nowrap">{{ $establishment->currency ?? '$' }}{{ number_format($item->price, 2) }}</span>
                                 <div class="d-flex align-items-center">
                                     @if(isset($cart[$item->id]))
                                         <div class="d-flex align-items-center bg-light rounded-pill p-1">
@@ -147,7 +148,8 @@
             <div class="d-flex align-items-center">
                 <div class="text-end me-3">
                     <small class="d-block opacity-50 text-uppercase fw-bold" style="font-size: 10px;">Total</small>
-                    <span class="fw-800 fs-4">${{ number_format($this->cartTotal, 2) }}</span>
+                    <span
+                        class="fw-800 fs-4">{{ $establishment->currency ?? '$' }}{{ number_format($this->cartTotal, 2) }}</span>
                 </div>
                 <i class="bx bx-right-arrow-alt fs-2 animate__animated animate__headShake animate__infinite"></i>
             </div>

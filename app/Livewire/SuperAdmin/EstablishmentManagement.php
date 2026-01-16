@@ -30,6 +30,7 @@ class EstablishmentManagement extends Component
     public $type = 'bar';
     public $address;
     public $phone;
+    public $currency = '$';
     public $email;
     public $description;
     public $logo;
@@ -42,6 +43,7 @@ class EstablishmentManagement extends Component
         'type' => 'required|in:bar,restaurant,hotel',
         'address' => 'required|string',
         'phone' => 'required|string',
+        'currency' => 'required|string|max:10',
         'email' => 'required|email',
         'description' => 'nullable|string',
         'logo' => 'nullable|image|max:500',
@@ -73,6 +75,7 @@ class EstablishmentManagement extends Component
         $this->type = $establishment->type;
         $this->address = $establishment->address;
         $this->phone = $establishment->phone;
+        $this->currency = $establishment->currency ?? '$';
         $this->email = $establishment->email;
         $this->description = $establishment->description;
         $this->max_tables = $establishment->max_tables;
@@ -96,6 +99,7 @@ class EstablishmentManagement extends Component
             'type' => $this->type,
             'address' => $this->address,
             'phone' => $this->phone,
+            'currency' => $this->currency,
             'email' => $this->email,
             'description' => $this->description,
             'max_tables' => $this->max_tables,
@@ -163,6 +167,7 @@ class EstablishmentManagement extends Component
             'type',
             'address',
             'phone',
+            'currency',
             'email',
             'description',
             'logo',
@@ -170,6 +175,7 @@ class EstablishmentManagement extends Component
             'is_active'
         ]);
         $this->type = 'bar';
+        $this->currency = '$';
         $this->max_tables = 50;
         $this->is_active = true;
     }

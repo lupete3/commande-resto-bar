@@ -19,7 +19,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <p class="mb-1 opacity-75">Chiffre d'Affaire</p>
-                            <h2 class="fw-800 mb-0">${{ number_format($revenue->total_revenue ?? 0, 2) }}</h2>
+                            <h2 class="fw-800 mb-0">{{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($revenue->total_revenue ?? 0, 2) }}</h2>
                         </div>
                         <div class="avatar  rounded p-2">
                             <i class="bx bx-dollar fs-1"></i>
@@ -98,7 +98,7 @@
                                             <span class="badge bg-label-info rounded-pill px-3">{{ $server->served_orders_count }}</span>
                                         </td>
                                         <td class="text-end pe-4 font-monospace fw-bold">
-                                            ${{ number_format($server->served_orders_sum_total ?? 0, 2) }}
+                                            {{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($server->served_orders_sum_total ?? 0, 2) }}
                                         </td>
                                     </tr>
                                 @empty
@@ -127,7 +127,7 @@
                             <div class="list-group-item px-0 border-0 py-3">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <span class="fw-600 text-dark">{{ $item->name }}</span>
-                                    <span class="small fw-800 text-primary">${{ number_format($item->total_sales, 2) }}</span>
+                                    <span class="small fw-800 text-primary">{{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($item->total_sales, 2) }}</span>
                                 </div>
                                 <div class="d-flex align-items-center">
                                     <div class="progress w-100 me-3" style="height: 6px; border-radius: 10px;">

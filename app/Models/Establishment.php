@@ -15,6 +15,7 @@ class Establishment extends Model
         'type',
         'address',
         'phone',
+        'currency',
         'email',
         'logo',
         'description',

@@ -67,7 +67,8 @@
                                 <small class="text-muted">{{ Str::limit($item->description, 30) }}</small>
                             </td>
                             <td><span class="badge bg-label-info">{{ $item->category->name }}</span></td>
-                            <td><strong>${{ number_format($item->price, 2) }}</strong></td>
+                            <td><strong>{{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($item->price, 2) }}</strong>
+                            </td>
                             <td>
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox"
@@ -126,7 +127,8 @@
                                     @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="form-label">Prix ($) *</label>
+                                    <label class="form-label">Prix ({{ auth()->user()->establishment->currency ?? '$' }})
+                                        *</label>
                                     <input type="number" wire:model="price" step="0.01"
                                         class="form-control @error('price') is-invalid @enderror">
                                     @error('price') <div class="invalid-feedback">{{ $message }}</div> @enderror

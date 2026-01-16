@@ -76,7 +76,7 @@
                                 </span>
                             </div>
                             <div class="small text-muted mb-3">
-                                <i class="bx bx-money me-1"></i> ${{ number_format($totalSession, 2) }}
+                                <i class="bx bx-money me-1"></i> {{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($totalSession, 2) }}
                             </div>
                             
                             @if($pendingCount === 0)
@@ -133,7 +133,7 @@
                                                 {{ $item->notes }}</small>
                                         @endif
                                     </span>
-                                    <span class="text-muted">${{ number_format($item->subtotal, 2) }}</span>
+                                    <span class="text-muted">{{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($item->subtotal, 2) }}</span>
                                 </li>
                             @endforeach
                         </ul>
@@ -145,7 +145,7 @@
                         @endif
 
                         <div class="d-flex justify-content-between align-items-center mt-3">
-                            <h6 class="mb-0">Total: ${{ number_format($order->total, 2) }}</h6>
+                            <h6 class="mb-0">Total: {{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($order->total, 2) }}</h6>
                             <div class="btn-group">
                                 @if($order->status === 'pending')
                                     <button wire:click="updateOrderStatus({{ $order->id }}, 'preparing')"

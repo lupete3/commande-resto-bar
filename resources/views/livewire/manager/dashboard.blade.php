@@ -30,7 +30,9 @@
                         <div class="content-left">
                             <span class="text-heading">Revenus Aujourd'hui</span>
                             <div class="d-flex align-items-center my-1">
-                                <h4 class="mb-0 me-2">${{ number_format($stats['revenue_today'], 2) }}</h4>
+                                <h4 class="mb-0 me-2">
+                                    {{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($stats['revenue_today'], 2) }}
+                                </h4>
                             </div>
                             <p class="mb-0 text-muted">Ventes réalisées</p>
                         </div>
@@ -121,13 +123,14 @@
                                                         <td><span class="fw-medium">{{ $order->order_number }}</span></td>
                                                         <td>Table {{ $order->table->number ?? 'N/A' }}</td>
                                                         <td>{{ $order->server->name ?? 'Client (QR)' }}</td>
-                                                        <td>${{ number_format($order->total, 2) }}</td>
+                                                        <td>{{ auth()->user()->establishment->currency ?? '$' }}{{ number_format($order->total, 2) }}
+                                                        </td>
                                                         <td>
                                                             <span class="badge bg-label-{{ 
-                                                                    $order->status === 'served' ? 'success' :
+                                                                                            $order->status === 'served' ? 'success' :
                                 ($order->status === 'ready' ? 'info' :
                                     ($order->status === 'preparing' ? 'primary' : 'warning')) 
-                                                                }}">
+                                                                                        }}">
                                                                 {{ ucfirst($order->status) }}
                                                             </span>
                                                         </td>

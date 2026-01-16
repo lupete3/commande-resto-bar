@@ -41,7 +41,8 @@
                                     {{ ucfirst($subscription->plan) }}
                                 </span>
                             </td>
-                            <td>${{ number_format($subscription->price, 2) }}</td>
+                            <td>{{ $subscription->establishment->currency ?? '$' }}{{ number_format($subscription->price, 2) }}
+                            </td>
                             <td>{{ ucfirst($subscription->billing_cycle) }}</td>
                             <td>{{ $subscription->started_at->format('d/m/Y') }}</td>
                             <td>{{ $subscription->ends_at?->format('d/m/Y') }}</td>
@@ -175,6 +176,6 @@
                 </div>
             </div>
         </div>
-        @endif
-    </div>
+    @endif
+</div>
 </div>

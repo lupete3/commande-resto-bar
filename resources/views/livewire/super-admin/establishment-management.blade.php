@@ -182,6 +182,13 @@
                                         class="form-control @error('phone') is-invalid @enderror">
                                     @error('phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Devise *</label>
+                                    <input type="text" wire:model="currency"
+                                        class="form-control @error('currency') is-invalid @enderror"
+                                        placeholder="ex: $, CDF, EUR">
+                                    @error('currency') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                </div>
                                 <div class="col-12">
                                     <label class="form-label">Adresse *</label>
                                     <textarea wire:model="address"
@@ -222,6 +229,6 @@
                     </div>
                 </div>
             </div>
-        @endif
+    @endif
     </div>
 </div>

@@ -89,14 +89,14 @@
                             </div>
                             <span class="small fw-600 text-dark">{{ $item->menuItem->name ?? 'Article inconnu' }}</span>
                         </div>
-                        <span class="small fw-bold text-muted">${{ number_format($item->subtotal, 2) }}</span>
+                        <span class="small fw-bold text-muted">{{ $order->establishment->currency ?? '$' }}{{ number_format($item->subtotal, 2) }}</span>
                     </div>
                 @endforeach
             </div>
 
             <div class="pt-3 mt-3 border-top d-flex justify-content-between align-items-center">
                 <span class="fw-bold text-dark">Total</span>
-                <span class="fw-800 fs-5 text-primary">${{ number_format($order->total, 2) }}</span>
+                <span class="fw-800 fs-5 text-primary">{{ $order->establishment->currency ?? '$' }}{{ number_format($order->total, 2) }}</span>
             </div>
         </div>
         
